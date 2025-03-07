@@ -25,59 +25,63 @@ body {
 }
 
 .dark body {
-  @apply bg-gray-900 text-gray-100;
+  background-color: #111827; /* bg-gray-900 */
+  color: #f3f4f6; /* text-gray-100 */
 }
 
 .dark .bg-white {
-  @apply bg-gray-900;
+  background-color: #111827; /* bg-gray-900 */
 }
 
 .dark .text-gray-900 {
-  @apply text-gray-100;
+  color: #f3f4f6; /* text-gray-100 */
 }
 
 .dark .text-gray-800 {
-  @apply text-gray-200;
+  color: #e5e7eb; /* text-gray-200 */
 }
 
 .dark .text-gray-700 {
-  @apply text-gray-300;
+  color: #d1d5db; /* text-gray-300 */
 }
 
 .dark .text-gray-600 {
-  @apply text-gray-400;
+  color: #9ca3af; /* text-gray-400 */
 }
 
 .dark .text-gray-500 {
-  @apply text-gray-500;
+  color: #6b7280; /* text-gray-500 */
 }
 
-.dark .text-gray-400 {
-  @apply text-gray-600;
+/* Instead of using @apply which creates circular dependencies */
+.dark [class*="text-gray-400"] {
+  color: #4b5563; /* text-gray-600 */
 }
 
 .dark .border-gray-200 {
-  @apply border-gray-700;
+  border-color: #374151; /* border-gray-700 */
 }
 
 .dark .border-gray-300 {
-  @apply border-gray-600;
+  border-color: #4b5563; /* border-gray-600 */
 }
 
 .dark .bg-gray-100 {
-  @apply bg-gray-800;
+  background-color: #1f2937; /* bg-gray-800 */
 }
 
 .dark .bg-gray-200 {
-  @apply bg-gray-700;
+  background-color: #374151; /* bg-gray-700 */
 }
 
 .dark .shadow-md {
-  @apply shadow-gray-800/50;
+  --tw-shadow-color: rgba(31, 41, 55, 0.5); /* shadow-gray-800/50 */
+  --tw-shadow: var(--tw-shadow-colored);
 }
 
 .dark .shadow-lg {
-  @apply shadow-gray-800/60;
+  --tw-shadow-color: rgba(31, 41, 55, 0.6); /* shadow-gray-800/60 */
+  --tw-shadow: var(--tw-shadow-colored);
 }
 
 li>p {
@@ -160,21 +164,23 @@ abbr[title] {
 
 /* Dark mode for DocSearch */
 .dark .DocSearch-Modal {
-  @apply bg-gray-800 text-gray-100;
-  --docsearch-modal-background: theme('colors.gray.800');
-  --docsearch-footer-background: theme('colors.gray.900');
-  --docsearch-text-color: theme('colors.gray.100');
-  --docsearch-hit-background: theme('colors.gray.700');
-  --docsearch-hit-color: theme('colors.gray.200');
+  background-color: #1f2937; /* bg-gray-800 */
+  color: #f3f4f6; /* text-gray-100 */
+  --docsearch-modal-background: #1f2937;
+  --docsearch-footer-background: #111827;
+  --docsearch-text-color: #f3f4f6;
+  --docsearch-hit-background: #374151;
+  --docsearch-hit-color: #e5e7eb;
   --docsearch-hit-shadow: none;
 }
 
 .dark .DocSearch-Footer {
-  @apply bg-gray-900;
+  background-color: #111827; /* bg-gray-900 */
 }
 
 .dark .DocSearch-Hit {
-  @apply bg-gray-700 text-gray-200;
+  background-color: #374151; /* bg-gray-700 */
+  color: #e5e7eb; /* text-gray-200 */
 }
 
 .DocSearch-Help > a {
